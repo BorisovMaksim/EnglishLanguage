@@ -1,6 +1,6 @@
 # This is a solution to LightAutoML course practice 
 
-I compared lightautoml solution with fairseqsolution  in text classification task. Data is taken from kaggle competition:
+I compared lightautoml solution with fairseq solution  in text classification task. Data is taken from kaggle competition:
 https://www.kaggle.com/competitions/feedback-prize-effectiveness
 
 # LightAutoML
