@@ -1,4 +1,20 @@
+# This is a solution to LightAutoML course practice 
 
+I compared lightautoml solution with fairseqsolution  in text classification task. Data is taken from kaggle competition:
+https://www.kaggle.com/competitions/feedback-prize-effectiveness
+
+# LightAutoML
+
+- See notebook AutoML.ipynb
+
+# Fairseq 
+I fine-tuned roberta-base model on training data. To reproduce:
+- install fairseq 
+- ``pip install requirements.txt``
+- ``python preprocess_data.py``
+- ``bash process.sh``
+- ``bash train.sh``
+- ``python inference_roberta.py``
 
 # Results
 
