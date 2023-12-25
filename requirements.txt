@@ -2,3 +2,7 @@ lightautoml[nlp]
 chardet
 emoji==0.6.0
 ipywidgets
+ray[tune]
+datasets
+transformers[torch]
+evaluate
