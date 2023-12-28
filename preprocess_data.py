@@ -2,6 +2,7 @@ from pathlib import Path
 from argparse import ArgumentParser
 import pandas as pd
 import os
+from sklearn.model_selection import train_test_split
 
 
 label2id = {
@@ -17,12 +18,17 @@ id2label = {
 
 def preprocess(data_path, random_state, train_size):
     df = pd.read_csv(Path(data_path) / 'train.csv')
-    df_shuffled = df.sample(len(df), random_state=random_state) 
- 
-    num_train_samples =  int(len(df_shuffled)*train_size)
-    for split in ['train', 'test']:
 
-        samples = df_shuffled[:num_train_samples] if  split == 'train' else df_shuffled[num_train_samples:]
+    X_train, X_test, y_train, y_test = train_test_split(df['discourse_text'], df['discourse_effectiveness'],
+                                                        stratify=df['discourse_effectiveness'],
+                                                        test_size=0.1,
+                                                        random_state=42)
+
+    df_train = pd.concat([X_train, y_train], axis=1)
+    df_test = pd.concat([X_test, y_test], axis=1)
+
+    for split in ['train', 'test']:
+        samples = df_train if  split == 'train' else df_test
         samples = list(samples[['discourse_text', 'discourse_effectiveness']].values)
     
         out_fname = 'train' if split == 'train' else 'dev'
