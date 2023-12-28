@@ -22,7 +22,6 @@ I fine-tuned roberta-base model on training data. To reproduce:
 
 # Results
 
-<<<<<<< HEAD
 Main metric is log loss
 
 
@@ -33,14 +32,4 @@ Main metric is log loss
 | roberta-base | lightautoml | 0.7312  |
 | roberta-base | fairseq | 0.7262  |
 | roberta-base | ray tune + hugging face | 0.8649  |
-=======
-| Model | framework |f-score for 'Adequate'  | f-score for 'Effective'    | f-score for 'Ineffective'    | Mean f-score |
-| :---:   | :---:  | :---: | :---: |  :---: |  :---: | 
-| bert-tiny | lightautoml| 0.7360   | 0.6379   |    0.0000     | 0.4579 |
-| bert-base-uncased | lightautoml |0.7472   |  0.6792   |   0.0000   | 0.4755|
-| roberta-base | lightautoml | 0.7539  |  0.6914  |   0.0000     | 0.4817 | 
-| roberta-base | fairseq | 0.7598  |  0.6238  |   0.3012     | 0.5616 | 
-| bert-base-uncased | ray tune + hugging face |0.7241   |  0.6590   |   0.3681   | 0.5838|
->>>>>>> a7033e08f7c1193779279b71f7235cb0147e89a1
-
 
